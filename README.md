@@ -194,7 +194,7 @@ Last step before starting implementing the ops, you want to set up the build env
 
 
 ### Add Op Implementation
-Now you are ready to implement your op. Following the instructions at [Adding a New Op](https://www.tensorflow.org/extend/adding_an_op), add definition of your op interface under `<your_op>/cc/ops/` and kernel implementation under `<your_op>/cc/kernels/`.
+Now you are ready to implement your op. Following the instructions at [Adding a New Op](https://www.tensorflow.org/guide/create_op#use_the_op_in_python), add definition of your op interface under `<your_op>/cc/ops/` and kernel implementation under `<your_op>/cc/kernels/`.
 
 
 ### Build and Test CPU Op
