@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-"""Use zero_out ops in python."""
+"""Use splitv2 ops in python."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,5 +22,5 @@ import tensorflow as tf
 from tensorflow.python.framework import load_library
 from tensorflow.python.platform import resource_loader
 
-zero_out_ops = tf.load_op_library("./_zero_out_ops.so")
-zero_out = zero_out_ops.zero_out
+splitv2_ops = tf.load_op_library("./_splitv2_ops.so")
+splitv2 = splitv2_ops.splitv2

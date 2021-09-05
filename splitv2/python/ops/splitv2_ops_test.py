@@ -12,15 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-"""Use zero_out ops in python."""
-
+"""Tests for splitv2 ops."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import tensorflow as tf
-from tensorflow.python.framework import load_library
-from tensorflow.python.platform import resource_loader
+import numpy as np
 
-zero_out_ops = tf.load_op_library("./_zero_out_ops.so")
-zero_out = zero_out_ops.zero_out
+from tensorflow.python.platform import test
+try:
+  from tensorflow_splitv2.python.ops.splitv2_ops import splitv2
+except ImportError:
+  from splitv2_ops import splitv2
+
+
+class ZeroOutTest(test.TestCase):
+
+  def testZeroOut(self):
+    with self.test_session():
+      self.assertAllClose(
+          splitv2([[1, 2], [3, 4]]), np.array([[1, 0], [0, 0]]))
+
+
+if __name__ == '__main__':
+  test.main()
